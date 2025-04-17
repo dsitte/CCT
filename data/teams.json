@@ -1,0 +1,98 @@
+[
+  {
+    "id": "team-001",
+    "name": "Thunderbolts",
+    "division": "U12",
+    "coach": "Sarah Johnson",
+    "wins": 8,
+    "losses": 2,
+    "ties": 1,
+    "pointsScored": 42,
+    "pointsAllowed": 18,
+    "players": ["player-001", "player-002", "player-003", "player-004", "player-005", "player-006", "player-007", "player-008", "player-009", "player-010", "player-011"]
+  },
+  {
+    "id": "team-002",
+    "name": "Lightning",
+    "division": "U12",
+    "coach": "Mike Thompson",
+    "wins": 7,
+    "losses": 3,
+    "ties": 1,
+    "pointsScored": 38,
+    "pointsAllowed": 22,
+    "players": ["player-012", "player-013", "player-014", "player-015", "player-016", "player-017", "player-018", "player-019", "player-020", "player-021", "player-022"]
+  },
+  {
+    "id": "team-003",
+    "name": "Hurricanes",
+    "division": "U12",
+    "coach": "David Wilson",
+    "wins": 5,
+    "losses": 5,
+    "ties": 1,
+    "pointsScored": 30,
+    "pointsAllowed": 28,
+    "players": ["player-023", "player-024", "player-025", "player-026", "player-027", "player-028", "player-029", "player-030", "player-031", "player-032", "player-033"]
+  },
+  {
+    "id": "team-004",
+    "name": "Tornadoes",
+    "division": "U12",
+    "coach": "Lisa Rodriguez",
+    "wins": 4,
+    "losses": 6,
+    "ties": 1,
+    "pointsScored": 25,
+    "pointsAllowed": 32,
+    "players": ["player-034", "player-035", "player-036", "player-037", "player-038", "player-039", "player-040", "player-041", "player-042", "player-043", "player-044"]
+  },
+  {
+    "id": "team-005",
+    "name": "Cyclones",
+    "division": "U14",
+    "coach": "Robert Chen",
+    "wins": 9,
+    "losses": 1,
+    "ties": 0,
+    "pointsScored": 48,
+    "pointsAllowed": 15,
+    "players": ["player-045", "player-046", "player-047", "player-048", "player-049", "player-050", "player-051", "player-052", "player-053", "player-054", "player-055"]
+  },
+  {
+    "id": "team-006",
+    "name": "Twisters",
+    "division": "U14",
+    "coach": "Jennifer Lee",
+    "wins": 6,
+    "losses": 3,
+    "ties": 1,
+    "pointsScored": 35,
+    "pointsAllowed": 25,
+    "players": ["player-056", "player-057", "player-058", "player-059", "player-060", "player-061", "player-062", "player-063", "player-064", "player-065", "player-066"]
+  },
+  {
+    "id": "team-007",
+    "name": "Storms",
+    "division": "U14",
+    "coach": "Kevin Martinez",
+    "wins": 5,
+    "losses": 4,
+    "ties": 1,
+    "pointsScored": 32,
+    "pointsAllowed": 30,
+    "players": ["player-067", "player-068", "player-069", "player-070", "player-071", "player-072", "player-073", "player-074", "player-075", "player-076", "player-077"]
+  },
+  {
+    "id": "team-008",
+    "name": "Blizzards",
+    "division": "U14",
+    "coach": "Amanda Taylor",
+    "wins": 3,
+    "losses": 7,
+    "ties": 0,
+    "pointsScored": 22,
+    "pointsAllowed": 38,
+    "players": ["player-078", "player-079", "player-080", "player-081", "player-082", "player-083", "player-084", "player-085", "player-086", "player-087", "player-088"]
+  }
+]
