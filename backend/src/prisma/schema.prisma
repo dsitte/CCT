@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+  output   = "./generated/type-graphql"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id            String          @id
+  firstName     String?
+  lastName      String?
+  age           Int?
+  position      String?
+  jerseyNumber  Int?
+  team          Team            @relation(fields: [teamId], references: [id])
+  teamId        String
+  ScorersInGame ScorersInGame[]
+}
+
+model Team {
+  id            String        @id
+  name          String
+  division      String
+  wins          Int           @default(0)
+  losses        Int           @default(0)
+  ties          Int           @default(0)
+  pointsScored  Int           @default(0)
+  pointsAllowed Int           @default(0)
+  Player        Player[]
+  TeamsInGame   TeamsInGame[]
+}
+
+model Game {
+  id                String   @id
+  date              DateTime
+  location          String
+  division          String
+  attendance        Int
+  weatherConditions String
+
+  TeamsInGame   TeamsInGame[]
+  ScorersInGame ScorersInGame[]
+}
+
+model TeamsInGame {
+  team   Team   @relation(fields: [teamId], references: [id])
+  teamId String
+
+  game   Game   @relation(fields: [gameId], references: [id])
+  gameId String
+
+  home  Boolean
+  score Int
+
+  @@id([teamId, gameId])
+}
+
+model ScorersInGame {
+  game   Game   @relation(fields: [gameId], references: [id])
+  gameId String
+
+  player   Player @relation(fields: [playerId], references: [id])
+  playerId String
+  goals    Int
+
+  @@id([gameId, playerId])
+}
