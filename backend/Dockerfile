@@ -5,6 +5,8 @@ FROM base as builder
 
 WORKDIR /app
 
+ENV DATABASE_URL="file:./dev.db" 
+
 COPY . .
 RUN rm -rf node_modules dist
 

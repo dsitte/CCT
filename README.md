@@ -1,7 +1,16 @@
 ## Setup & Running
 
 Both the front end and back end are containerized and a docker compose file is provided. To run the
-solution, simply run `docker compose up` from the root directory.
+solution, simply run `docker compose up` from the root directory. The app will be running at
+http://localhost:9000
+
+If you would like to generate and view the Prisma & GraphQL clients used by the backend, run the following:
+
+```
+cd backend
+yarn
+yarn prisma-gen
+```
 
 ## Tech Choices
 
