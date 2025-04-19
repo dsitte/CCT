@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@apollo/client";
-import { FetchTeamRecords, FetchTeamRecordsResp } from "../queries";
+import { FetchTeamRecords } from "../queries";
 import React, { useState } from "react";
 import BarPlot from "./BasePlots/BarPlot";
 import { PlotOptions } from "@observablehq/plot";
@@ -15,7 +15,7 @@ const barOptions = {
 const RecordByTeam = () => {
   const {
     data: { teams },
-  } = useSuspenseQuery<FetchTeamRecordsResp>(FetchTeamRecords);
+  } = useSuspenseQuery(FetchTeamRecords);
 
   const [{ transformedData, teamOrder }] = useState(() =>
     recordByTeamTransform(teams)

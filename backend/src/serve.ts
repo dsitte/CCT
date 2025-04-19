@@ -1,9 +1,5 @@
 import "reflect-metadata";
-import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { resolvers } from "./prisma/generated/type-graphql";
-import { buildSchema } from "type-graphql";
-import { PrismaClient } from "./prisma/generated/prisma";
 import getServer from "./getServer";
 
 const run = async () => {

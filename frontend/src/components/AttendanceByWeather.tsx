@@ -1,8 +1,5 @@
 import { useSuspenseQuery } from "@apollo/client";
-import {
-  FetchAttendanceByWeather,
-  FetchAttendanceByWeatherRecordsResp,
-} from "../queries";
+import { FetchAttendanceByWeather } from "../queries";
 import React, { useState } from "react";
 import BarPlot from "./BasePlots/BarPlot";
 import { BarYOptions, PlotOptions } from "@observablehq/plot";
@@ -21,9 +18,7 @@ const plotOptions = {
 const AttendanceByWeather = () => {
   const {
     data: { groupByGame },
-  } = useSuspenseQuery<FetchAttendanceByWeatherRecordsResp>(
-    FetchAttendanceByWeather
-  );
+  } = useSuspenseQuery(FetchAttendanceByWeather);
 
   const [transformedData] = useState(() =>
     groupByGame.map(({ _avg: { attendance }, weatherConditions }) => ({

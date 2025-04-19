@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@apollo/client";
-import { FetchGoalsByDivision, FetchGoalsByDivisionResp } from "../queries";
+import { FetchGoalsByDivision } from "../queries";
 import React, { useState } from "react";
 
 import { LineYOptions, PlotOptions } from "@observablehq/plot";
@@ -19,7 +19,7 @@ const plotOptions = {
 const GoalsByDivision = () => {
   const {
     data: { games },
-  } = useSuspenseQuery<FetchGoalsByDivisionResp>(FetchGoalsByDivision);
+  } = useSuspenseQuery(FetchGoalsByDivision);
 
   const [transformedData] = useState(() => goalsByDivisionTransform(games));
 

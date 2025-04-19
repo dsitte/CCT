@@ -8,7 +8,8 @@
     "init-db": "prisma migrate dev --skip-generate --name init",
     "dev": "ts-node ./src/api/serve.ts",
     "copy": "copyfiles -u 1 src/prisma/**/*.js src/prisma/**/*.json src/prisma/**/*.db src/prisma/**/*.prisma src/prisma/**/*.node dist",
-    "build": "tsc && yarn copy",
+    "ts-check": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json && yarn copy",
     "clean": "rm -rf dist",
     "setup": "yarn prisma-gen && yarn build && yarn copy && yarn init-db",
     "e2e": "jest"

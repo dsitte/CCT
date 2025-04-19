@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql, TypedDocumentNode } from "@apollo/client";
 
 type Sum<T extends string> = {
   _sum: Record<T, number>;
@@ -14,7 +14,7 @@ export type FetchTeamRecordsResp = {
   }[];
 };
 
-export const FetchTeamRecords = gql`
+export const FetchTeamRecords: TypedDocumentNode<FetchTeamRecordsResp> = gql`
   query Query {
     teams {
       id
@@ -35,7 +35,7 @@ export type FetchAttendanceByWeatherRecordsResp = {
   }[];
 };
 
-export const FetchAttendanceByWeather = gql`
+export const FetchAttendanceByWeather: TypedDocumentNode<FetchAttendanceByWeatherRecordsResp> = gql`
   query GroupByPlayer {
     groupByGame(by: weatherConditions) {
       _avg {
@@ -52,7 +52,7 @@ export type FetchAttendanceByDateResp = {
   } & Sum<"attendance">)[];
 };
 
-export const FetchAttendanceByDate = gql`
+export const FetchAttendanceByDate: TypedDocumentNode<FetchAttendanceByDateResp> = gql`
   query Query {
     groupByGame(by: date) {
       _sum {
@@ -70,7 +70,7 @@ export type FetchAttendanceByDivisionResp = {
   } & Sum<"attendance">)[];
 };
 
-export const FetchAttendanceByDivision = gql`
+export const FetchAttendanceByDivision: TypedDocumentNode<FetchAttendanceByDivisionResp> = gql`
   query GroupByGame {
     groupByGame(by: [date, division]) {
       date
@@ -92,7 +92,7 @@ export type FetchGoalsByDivisionResp = {
   }[];
 };
 
-export const FetchGoalsByDivision = gql`
+export const FetchGoalsByDivision: TypedDocumentNode<FetchGoalsByDivisionResp> = gql`
   query GroupByTeamsInGame {
     games {
       date

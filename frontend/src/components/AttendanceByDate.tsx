@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@apollo/client";
-import { FetchAttendanceByDate, FetchAttendanceByDateResp } from "../queries";
+import { FetchAttendanceByDate } from "../queries";
 import React, { useState } from "react";
 
 import { LineYOptions } from "@observablehq/plot";
@@ -14,7 +14,7 @@ const lineOptions = {
 const AttendanceByDate = () => {
   const {
     data: { groupByGame },
-  } = useSuspenseQuery<FetchAttendanceByDateResp>(FetchAttendanceByDate);
+  } = useSuspenseQuery(FetchAttendanceByDate);
 
   const [transformedData] = useState(() =>
     groupByGame.map(({ _sum: { attendance }, date }) => ({

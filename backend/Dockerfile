@@ -6,12 +6,12 @@ FROM base as builder
 WORKDIR /app
 
 COPY . .
-RUN rm -rf node_modules
+RUN rm -rf node_modules dist
 
-RUN yarn
-RUN yarn prisma-gen
-RUN yarn init-db
-RUN yarn build
+RUN yarn \
+  && yarn prisma-gen \
+  && yarn build \
+  && yarn init-db
 
 FROM base
 
